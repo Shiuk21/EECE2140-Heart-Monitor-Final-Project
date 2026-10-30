@@ -7,7 +7,7 @@ using namespace std;
 int ageSet()
 {
     int a;
-    cout << "Please enter age: ";
+    cout << "How old are you?  ";
     cin >> a;
     return a;
 }
@@ -46,7 +46,7 @@ int main()
     do 
     {
         cout << endl;
-        cout << "What would you like to do?" << endl << "Enter: 1 to set your age; 2 to choose an activity; 3 to read your heart rate; 0 to exit the program) ";
+        cout << "What would you like to do?" << endl << "Enter: 1 to set your age; 2 to choose an activity; 3 to read your heart rate; 0 to exit the program ";
         cin >> option;
         cout << endl;
 
