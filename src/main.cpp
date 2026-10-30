@@ -3,6 +3,7 @@
 using namespace std;
 #include "person.h"
 #include "activity.h"
+#include "reading.h"
 
 int ageSet()
 {
@@ -20,6 +21,17 @@ int activitySet()
     return a;
 }
 
+bool readingSet()
+{
+    char s;
+    cout << "Would you like to view your live heartrate reading? (y/n): ";
+    cin >> s;
+    if (s == 'y')
+        return true;
+    else if (s == 'n')
+        return false;
+}
+
 string activityIs(int a)
 {
     if (a==0)
@@ -31,14 +43,24 @@ string activityIs(int a)
     return "unknown";
 }
 
+string readingIs(bool a)
+{
+    if (a == true)
+        return "Yes";
+    else if (a == false)
+        return "No";
+}
+
 int main()
 {
     int option;
     int age;
     int activity;
+    bool reading;
 
     Person p;
     Activity a;
+    Reading r;
 
     cout << "Welcome to the Heart Rate Monitor Program! Press enter to start.";
     cin.get();
@@ -73,7 +95,10 @@ int main()
                 cout << "The activity that you are doing is set to " << activityIs(a.getActivity()) << endl;
                 break;
             case 3:
-                cout << "Whoah! This feature hasn't been implemented yet. So you don't have a heart rate. Yikes. Tough luck." << endl; // Replace this with the actual code later. This is just a placeholder for now. - Michael 
+                reading = readingSet();
+
+                r.setReading(reading);
+                cout << "Showing live reading? " << readingIs(r.getReading()) << endl; // Replace this with the actual code later. This is just a placeholder for now. - Michael 
                 break;
             case 0:
                 break;
