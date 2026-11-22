@@ -126,7 +126,6 @@ int main()
                     adolescent = false;
                 }
 
-
                 break;
             case 2:
                 activity = activitySet();
@@ -159,7 +158,6 @@ int main()
                         {
                             cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
                         }
-                    
                     }
                     else if (adolescent)
                     {
@@ -170,9 +168,7 @@ int main()
                         else
                         {
                             cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
-                        }
-                    
-                        
+                        }       
                     }
                     else if (adult)
                     {
@@ -184,12 +180,7 @@ int main()
                         {
                             cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
                         }
-                    
                     }
-
-                    //1 - 3; 98 - 104
-                    //4-12; 80 - 118
-                    ///18+ 60 - 100
                 }
                 
                 break;
