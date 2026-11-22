@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
-using namespace std;
 #include "person.h"
 #include "activity.h"
 #include "reading.h"
+#include "heartrate.h"
+using namespace std;
 
 int ageSet()
 {
@@ -71,10 +72,14 @@ int main()
     int activity;
     bool reading;
     bool ageCheck = false; // New variable that checks if user has input their age -Michael
+    bool infant = false;
+    bool adolescent = false;
+    bool adult = false;
 
     Person p;
     Activity a;
     Reading r;
+    heartrate check;
 
     cout << "Welcome to the Heart Rate Monitor Program! Press enter to start.";
     cin.get();
@@ -102,6 +107,26 @@ int main()
                 p.setAge(age);
                 cout << "You've set your age to " << p.getAge() << endl;
                 ageCheck = true;
+                if (p.getAge() > 1 && p.getAge() < 3)
+                {
+                    infant = true;
+                    adult = false;
+                    adolescent = false;
+                }
+                else if (p.getAge() < 12)
+                {
+                    adolescent = true;
+                    infant = false;
+                    adult = false;
+                }
+                else
+                {
+                    adult = true;
+                    infant = false;
+                    adolescent = false;
+                }
+
+
                 break;
             case 2:
                 activity = activitySet();
@@ -119,7 +144,54 @@ int main()
                 reading = readingSet();
 
                 r.setReading(reading);
-                cout << "Showing live reading? " << readingIs(r.getReading()) << endl; 
+                if (r.getReading())
+                {
+                    check.setRate();
+                    cout << "Your heart rate is currently: " << check.getRate() << endl;
+
+                    if (infant)
+                    {
+                        if (check.getRate() < 104 && check.getRate() > 98)
+                        {
+                            cout << "Your heart rate seems normal." << endl;
+                        }
+                        else
+                        {
+                            cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
+                        }
+                    
+                    }
+                    else if (adolescent)
+                    {
+                        if (check.getRate() < 118 && check.getRate() > 80)
+                        {
+                            cout << "Your heart rate seems normal." << endl;
+                        }
+                        else
+                        {
+                            cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
+                        }
+                    
+                        
+                    }
+                    else if (adult)
+                    {
+                        if (check.getRate() < 100 && check.getRate() > 60)
+                        {
+                            cout << "Your heart rate seems normal." << endl;
+                        }
+                        else
+                        {
+                            cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
+                        }
+                    
+                    }
+
+                    //1 - 3; 98 - 104
+                    //4-12; 80 - 118
+                    ///18+ 60 - 100
+                }
+                
                 break;
             case 0:
                 break;
