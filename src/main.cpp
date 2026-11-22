@@ -30,6 +30,11 @@ bool readingSet()
         return true;
     else if (s == 'n')
         return false;
+    else
+    {
+        cout << "Invalid input. Assuming no." << endl; //added a default case just in case the user inputs something other than y or n.
+        return false;
+    }
 }
 
 string activityIs(int a)
@@ -47,7 +52,7 @@ string readingIs(bool a)
 {
     if (a == true)
         return "Yes";
-    else if (a == false)
+    else
         return "No";
 }
 
@@ -57,6 +62,7 @@ int main()
     int age;
     int activity;
     bool reading;
+    bool ageCheck = false; // New variable that checks if user has input their age
 
     Person p;
     Activity a;
@@ -87,6 +93,7 @@ int main()
 
                 p.setAge(age);
                 cout << "You've set your age to " << p.getAge() << endl;
+                ageCheck = true;
                 break;
             case 2:
                 activity = activitySet();
@@ -95,10 +102,16 @@ int main()
                 cout << "The activity that you are doing is set to " << activityIs(a.getActivity()) << endl;
                 break;
             case 3:
+                if (!ageCheck) // Checks if user has input their age bbefore checking their heart rate.
+                {
+                    cout << "Please input your age before checking your heart rate." << endl;
+                    break;
+                }
+
                 reading = readingSet();
 
                 r.setReading(reading);
-                cout << "Showing live reading? " << readingIs(r.getReading()) << endl; // Replace this with the actual code later. This is just a placeholder for now. - Michael 
+                cout << "Showing live reading? " << readingIs(r.getReading()) << endl; 
                 break;
             case 0:
                 break;
