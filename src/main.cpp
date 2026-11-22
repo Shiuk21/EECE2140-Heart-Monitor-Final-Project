@@ -8,8 +8,16 @@ using namespace std;
 int ageSet()
 {
     int a;
-    cout << "How old are you?  ";
-    cin >> a;
+    do
+    {
+        cout << "How old are you?  ";
+        cin >> a;
+        
+        if (a < 0)
+            cout << "Uh...I don't know if you can be not born. Enter your real age." << endl;
+        
+    }
+    while (a < 0);
     return a;
 }
 
