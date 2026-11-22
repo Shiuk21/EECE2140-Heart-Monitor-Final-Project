@@ -32,7 +32,7 @@ bool readingSet()
         return false;
     else
     {
-        cout << "Invalid input. Assuming no." << endl; //added a default case just in case the user inputs something other than y or n.
+        cout << "Invalid input. Assuming no." << endl; //added a default case just in case the user inputs something other than y or n. - Michael
         return false;
     }
 }
@@ -62,7 +62,7 @@ int main()
     int age;
     int activity;
     bool reading;
-    bool ageCheck = false; // New variable that checks if user has input their age
+    bool ageCheck = false; // New variable that checks if user has input their age -Michael
 
     Person p;
     Activity a;
