@@ -143,45 +143,13 @@ int main()
                 reading = readingSet();
 
                 r.setReading(reading);
-                if (r.getReading())
-                {
-                    check.setRate();
-                    cout << "Your heart rate is currently: " << check.getRate() << endl;
-
-                    if (infant)
-                    {
-                        if (check.getRate() < 104 && check.getRate() > 98)
-                        {
-                            cout << "Your heart rate seems normal." << endl;
-                        }
-                        else
-                        {
-                            cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
-                        }
-                    }
-                    else if (adolescent)
-                    {
-                        if (check.getRate() < 118 && check.getRate() > 80)
-                        {
-                            cout << "Your heart rate seems normal." << endl;
-                        }
-                        else
-                        {
-                            cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
-                        }       
-                    }
-                    else if (adult)
-                    {
-                        if (check.getRate() < 100 && check.getRate() > 60)
-                        {
-                            cout << "Your heart rate seems normal." << endl;
-                        }
-                        else
-                        {
-                            cout << "Your heart rate doesn't seem normal. It might be worth going to see a doctor." << endl;
-                        }
-                    }
-                }
+                check.setRate();
+                cout << "Your heart rate is " << check.getRate() << " beats per minute." << endl;
+                
+                if (check.isNormal(p.getAge()))
+                    cout << "Your heart rate seems normal." << endl;
+                else
+                    cout << "Your heart doesn't seem normal. It might be worth going to a doctor to get checked." << endl;
                 
                 break;
             case 0:
