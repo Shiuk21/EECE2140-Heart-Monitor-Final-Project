@@ -8,7 +8,7 @@ class heartrate
     public:
         void setRate();
         int getRate() const;
-        bool isNormal(int age) const;
+        bool isNormal(int age, int activity) const;
 };
 
 #endif

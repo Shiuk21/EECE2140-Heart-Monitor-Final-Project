@@ -1,3 +1,4 @@
+//Ella's Class
 #include "activity.h"
 
 Activity::Activity()

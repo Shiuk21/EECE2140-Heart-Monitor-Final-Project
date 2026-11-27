@@ -1,3 +1,4 @@
+//Rachel's Class
 #include "reading.h"
 
 Reading::Reading()

@@ -1,6 +1,7 @@
 #ifndef ACTIVITY_H
 #define ACTIVITY_H
 
+//Ella's Class
 class Activity
 {
     private:
