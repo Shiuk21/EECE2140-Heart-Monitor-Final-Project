@@ -1,8 +1,9 @@
+//Michael's Class
 #include "person.h"
 
 Person::Person()
 {
-    age = 0;
+    age = 18;
 }
 
 void Person::setAge(int a)
